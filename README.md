@@ -23,7 +23,7 @@ key space :  drop down
 key D :  drop one line down
 ```
 
-# Download QtTetris.exe:
+# Download project Tetris:
 ```
  git clone https://github.com/walidAbbassi/Tetris-Qt
 ```
