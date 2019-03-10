@@ -5,5 +5,7 @@
         <file>sound/Tetris.mp3</file>
         <file>sound/drop.wav</file>
         <file>sound/money.wav</file>
+        <file>picture/Tetris.gif</file>
+        <file>picture/tetris.ico</file>
     </qresource>
 </RCC>

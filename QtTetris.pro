@@ -9,6 +9,7 @@ QT       += core gui widgets
 TARGET = QtTetris
 TEMPLATE = app
 QT += multimedia
+RC_ICONS += picture/tetris.ico
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
