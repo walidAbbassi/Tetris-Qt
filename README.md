@@ -1,7 +1,7 @@
 # Tetris-Qt #
 Classic tetris game made with c++ and qt5.11
 
-![alarum](https://github.com/walidAbbassi/Tetris-Qt/blob/master/picture/tetris.png)
+![alarum](https://github.com/walidAbbassi/Tetris-Qt/blob/master/picture/Tetris.gif)
 
 # Control 
 ```
