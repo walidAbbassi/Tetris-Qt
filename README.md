@@ -3,7 +3,7 @@ Classic tetris game made with c++ and qt5.11
 
 ![alarum](https://github.com/walidAbbassi/Tetris-Qt/blob/master/picture/Tetris.gif)
 
-# Control 
+# Control :
 ```
 key → :  move left 
 ```
@@ -21,4 +21,9 @@ key space :  drop down
 ```
 ```
 key D :  drop one line down
+```
+
+# Download QtTetris.exe:
+```
+svn checkout "https://github.com/walidAbbassi/Tetris-Qt/trunk/release"
 ```
