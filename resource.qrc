@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>picture/tetris.png</file>
+        <file>picture/background.jpg</file>
+        <file>sound/Tetris.mp3</file>
+        <file>sound/drop.wav</file>
+        <file>sound/money.wav</file>
+    </qresource>
+</RCC>
