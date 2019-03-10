@@ -24,7 +24,9 @@ key D :  drop one line down
 ```
 
 # Download QtTetris.exe:
+```
  git clone https://github.com/walidAbbassi/Tetris-Qt
+```
  
 # Download QtTetris.exe:
 ```
