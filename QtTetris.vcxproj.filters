@@ -27,6 +27,16 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -54,6 +64,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="mainWindowTetris.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="tetrixboard.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -63,17 +76,22 @@
     <QtMoc Include="tetrixwindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="mainWindowTetris.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    
+    
     <CustomBuild Include="debug\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
+    
+    
+    
+    
+    
+    
     <ClInclude Include="ui_mainWindowTetris.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -82,5 +100,25 @@
     <QtUic Include="mainWindowTetris.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sound\Tetris.mp3">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="picture\background.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sound\drop.wav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sound\money.wav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="resource.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="picture\tetris.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

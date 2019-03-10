@@ -7,18 +7,10 @@
 
 int main(int argc, char *argv[])
 {
-//    QApplication a(argc, argv);
-    //MainWindowTetris w;
-    //w.show();
+    QApplication applicationTetris(argc, argv);
+    MainWindowTetris windowTetris;
 
-//    return a.exec();
+    windowTetris.show();
 
-    QApplication app(argc, argv);
-    //TetrixWindow window;
-    //window.show();
-    MainWindowTetris w;
-
-	w.show();
-
-    return app.exec();
+    return applicationTetris.exec();
 }
