@@ -1,14 +1,34 @@
-#include <QtCore>
-
+/*
+* C++ && Qt Tetris: Tetrix Piece
+* Author: walid Abbassi [https://github.com/walidAbbassi]
+* 2019
+*
+* Source code is licensed under MIT License
+* (for more details see LICENSE)
+*
+*/
 #include <stdlib.h>
+#include <QtCore>
 
 #include "tetrixpiece.h"
 
+/*
+*	set Random TetrixShape
+*	@name	: setRandomShape
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixPiece::setRandomShape()
 {
     setShape(TetrixShape(QRandomGenerator::global()->bounded(7) + 1));
 }
 
+/*
+*	set TetrixShape to TetrixPiece
+*	@name	: setShape
+*	@param	: TetrixShape
+*	@return : void
+*/
 void TetrixPiece::setShape(TetrixShape shape)
 {
     static const int coordsTable[8][4][2] = {
@@ -29,6 +49,12 @@ void TetrixPiece::setShape(TetrixShape shape)
     pieceShape = shape;
 }
 
+/*
+*	get minimum X coordinate
+*	@name	: minX
+*	@param	: no param.
+*	@return : int
+*/
 int TetrixPiece::minX() const
 {
     int min = coords[0][0];
@@ -37,6 +63,12 @@ int TetrixPiece::minX() const
     return min;
 }
 
+/*
+*	get maximum X coordinate
+*	@name	: maxX
+*	@param	: no param.
+*	@return : int
+*/
 int TetrixPiece::maxX() const
 {
     int max = coords[0][0];
@@ -45,6 +77,12 @@ int TetrixPiece::maxX() const
     return max;
 }
 
+/*
+*	get minimum y coordinate
+*	@name	: minY
+*	@param	: no param.
+*	@return : int
+*/
 int TetrixPiece::minY() const
 {
     int min = coords[0][1];
@@ -53,6 +91,12 @@ int TetrixPiece::minY() const
     return min;
 }
 
+/*
+*	get maximum y coordinate
+*	@name	: maxY
+*	@param	: no param.
+*	@return : int
+*/
 int TetrixPiece::maxY() const
 {
     int max = coords[0][1];
@@ -61,6 +105,12 @@ int TetrixPiece::maxY() const
     return max;
 }
 
+/*
+*	rotated Left TetrixPiece
+*	@name	: rotatedLeft
+*	@param	: no param.
+*	@return : TetrixPiece
+*/
 TetrixPiece TetrixPiece::rotatedLeft() const
 {
     if (pieceShape == SquareShape)
@@ -75,6 +125,12 @@ TetrixPiece TetrixPiece::rotatedLeft() const
     return result;
 }
 
+/*
+*	rotated Right TetrixPiece
+*	@name	: rotatedRight
+*	@param	: no param.
+*	@return : TetrixPiece
+*/
 TetrixPiece TetrixPiece::rotatedRight() const
 {
     if (pieceShape == SquareShape)

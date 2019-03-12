@@ -1,10 +1,26 @@
+/*
+* C++ && Qt Tetris: Window Tetris
+* Author: walid Abbassi [https://github.com/walidAbbassi]
+* 2019
+*
+* Source code is licensed under MIT License
+* (for more details see LICENSE)
+*
+*/
+#include <QMessageBox>
+#include <QHBoxLayout>
+#include <QIcon>
+
 #include "mainWindowTetris.h"
 #include "ui_mainWindowTetris.h"
-#include <QHBoxLayout>
 #include "tetrixwindow.h"
-#include <QIcon>
-#include <QMessageBox>
 
+/*
+*	constructor Main Window Tetris
+*	@name	: MainWindowTetris
+*	@param	: QWidget
+*	@return : void
+*/
 MainWindowTetris::MainWindowTetris(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindowTetris)
@@ -21,6 +37,12 @@ MainWindowTetris::MainWindowTetris(QWidget *parent) :
     createMenuBar();
 }
 
+/*
+*	create MenuBar for parent widget
+*	@name	: createMenuBar
+*	@param	: no param.
+*	@return : void
+*/
 void MainWindowTetris::createMenuBar()
 {
     QMenu *helpMenu = menuBar()->addMenu(tr("&Help"));
@@ -29,9 +51,14 @@ void MainWindowTetris::createMenuBar()
     aboutAct->setStatusTip(tr("Show the application's About box"));
 }
 
+/*
+*	create MessageBox for control key tetris 
+*	@name	: commande
+*	@param	: no param.
+*	@return : void
+*/
 void MainWindowTetris::commande()
 {
-//    QString s = QChar(&#x2B06;);
    QMessageBox::about(this, tr("commande Game"),
             tr("<br><b>key → :</b>  move left \n</br>"
                "<br><b>key ← :</b>  move right \n</br>"
@@ -41,6 +68,12 @@ void MainWindowTetris::commande()
                "<br><b>key D :</b>  drop one line down</br>"));
 }
 
+/*
+*	create MessageBox about tetris application
+*	@name	: about
+*	@param	: no param.
+*	@return : void
+*/
 void MainWindowTetris::about()
 {
    QMessageBox::about(this, tr("About Application"),
@@ -49,6 +82,12 @@ void MainWindowTetris::about()
                " (Have fun walid abbassi)."));
 }
 
+/*
+*	destructor Main Window Tetris
+*	@name	: ~MainWindowTetris
+*	@param	: no param.
+*	@return : void
+*/
 MainWindowTetris::~MainWindowTetris()
 {
     delete ui;

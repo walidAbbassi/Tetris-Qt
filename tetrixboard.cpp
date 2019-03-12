@@ -1,7 +1,22 @@
+/*
+* C++ && Qt Tetris: Window Tetrix Board
+* Author: walid Abbassi [https://github.com/walidAbbassi]
+* 2019
+*
+* Source code is licensed under MIT License
+* (for more details see LICENSE)
+*
+*/
 #include <QtWidgets>
 
 #include "tetrixboard.h"
 
+/*
+*	Constructor Tetrix Board
+*	@name	: TetrixBoard
+*	@param	: QWidget
+*	@return : void
+*/
 TetrixBoard::TetrixBoard(QWidget *parent)
     : QFrame(parent)
 {
@@ -16,23 +31,47 @@ TetrixBoard::TetrixBoard(QWidget *parent)
     nextPiece.setRandomShape();
 }
 
+/*
+*	Set Next Piece Label
+*	@name	: setNextPieceLabel
+*	@param	: QLabel.
+*	@return : void
+*/
 void TetrixBoard::setNextPieceLabel(QLabel *label)
 {
     nextPieceLabel = label;
 }
 
+/*
+*	Resize frame
+*	@name	: sizeHint
+*	@param	: no param.
+*	@return : QSize
+*/
 QSize TetrixBoard::sizeHint() const
 {
     return QSize(BoardWidth * 15 + frameWidth() * 2,
                  BoardHeight * 15 + frameWidth() * 2);
 }
 
+/*
+*	Minimum Size frame
+*	@name	: minimumSizeHint
+*	@param	: no param.
+*	@return : QSize
+*/
 QSize TetrixBoard::minimumSizeHint() const
 {
     return QSize(BoardWidth * 5 + frameWidth() * 2,
                  BoardHeight * 5 + frameWidth() * 2);
 }
 
+/*
+*	Start Game
+*	@name	: start
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::start()
 {
     if (isPaused)
@@ -58,6 +97,12 @@ void TetrixBoard::start()
     timer.start(timeoutTime(), this);
 }
 
+/*
+*	Pause Game
+*	@name	: pause
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::pause()
 {
     if (!isStarted)
@@ -74,6 +119,12 @@ void TetrixBoard::pause()
     update();
 }
 
+/*
+*	Set Volume Game
+*	@name	: setVolume
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::setVolume(int volume)
 {
     if(volume == 0)
@@ -89,6 +140,12 @@ void TetrixBoard::setVolume(int volume)
     }
 }
 
+/*
+*	paint Event in frame
+*	@name	: paintEvent
+*	@param	: QPaintEvent.
+*	@return : void
+*/
 void TetrixBoard::paintEvent(QPaintEvent *event)
 {
     QFrame::paintEvent(event);
@@ -128,6 +185,12 @@ void TetrixBoard::paintEvent(QPaintEvent *event)
     }
 }
 
+/*
+*	key Press Event
+*	@name	: keyPressEvent
+*	@param	: QKeyEvent
+*	@return : void
+*/
 void TetrixBoard::keyPressEvent(QKeyEvent *event)
 {
     if (!isStarted || isPaused || curPiece.shape() == NoShape) {
@@ -159,6 +222,12 @@ void TetrixBoard::keyPressEvent(QKeyEvent *event)
     }
 }
 
+/*
+*	timer Event
+*	@name	: timerEvent
+*	@param	: QKeyEQTimerEventvent
+*	@return : void
+*/
 void TetrixBoard::timerEvent(QTimerEvent *event)
 {
     if (event->timerId() == timer.timerId()) {
@@ -174,12 +243,24 @@ void TetrixBoard::timerEvent(QTimerEvent *event)
     }
 }
 
+/*
+*	clear Board TetrixShape
+*	@name	: clearBoard
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::clearBoard()
 {
     for (int i = 0; i < BoardHeight * BoardWidth; ++i)
         board[i] = NoShape;
 }
 
+/*
+*	Drop Down current TetrixPiece
+*	@name	: dropDown
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::dropDown()
 {
     int dropHeight = 0;
@@ -193,12 +274,24 @@ void TetrixBoard::dropDown()
     pieceDropped(dropHeight);
 }
 
+/*
+*	Drop Down by one Line the current TetrixPiece
+*	@name	: oneLineDown
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::oneLineDown()
 {
     if (!tryMove(curPiece, curX, curY - 1))
         pieceDropped(0);
 }
 
+/*
+*	piece is Dropped : update score/level/removeFullLines
+*	@name	: pieceDropped
+*	@param	: int dropHeight
+*	@return : void
+*/
 void TetrixBoard::pieceDropped(int dropHeight)
 {
     for (int i = 0; i < 4; ++i) {
@@ -223,6 +316,13 @@ void TetrixBoard::pieceDropped(int dropHeight)
         newPiece();
 }
 
+
+/*
+*	remove Full Lines from bord
+*	@name	: removeFullLines
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::removeFullLines()
 {
     int numFullLines = 0;
@@ -263,6 +363,12 @@ void TetrixBoard::removeFullLines()
     }
 }
 
+/*
+*	make new TetrixPiece
+*	@name	: newPiece
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::newPiece()
 {
     curPiece = nextPiece;
@@ -278,6 +384,12 @@ void TetrixBoard::newPiece()
     }
 }
 
+/*
+*	show next TetrixPiece
+*	@name	: showNextPiece
+*	@param	: no param.
+*	@return : void
+*/
 void TetrixBoard::showNextPiece()
 {
     if (!nextPieceLabel)
@@ -299,6 +411,12 @@ void TetrixBoard::showNextPiece()
     nextPieceLabel->setPixmap(pixmap);
 }
 
+/*
+*	Move TetrixPiece
+*	@name	: tryMove
+*	@param	: TetrixPiece, int X, int Y
+*	@return : bool
+*/
 bool TetrixBoard::tryMove(const TetrixPiece &newPiece, int newX, int newY)
 {
     for (int i = 0; i < 4; ++i) {
@@ -317,6 +435,12 @@ bool TetrixBoard::tryMove(const TetrixPiece &newPiece, int newX, int newY)
     return true;
 }
 
+/*
+*	draw TetrixPiece
+*	@name	: drawSquare
+*	@param	: QPainter, int x, int y, TetrixShape
+*	@return : void
+*/
 void TetrixBoard::drawSquare(QPainter &painter, int x, int y, TetrixShape shape)
 {
     static const QRgb colorTable[8] = {

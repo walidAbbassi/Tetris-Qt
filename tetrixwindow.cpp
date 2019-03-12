@@ -1,8 +1,23 @@
+/*
+* C++ && Qt Tetris: Tetrix Window Board
+* Author: walid Abbassi [https://github.com/walidAbbassi]
+* 2019
+*
+* Source code is licensed under MIT License
+* (for more details see LICENSE)
+*
+*/
 #include <QtWidgets>
 
 #include "tetrixboard.h"
 #include "tetrixwindow.h"
 
+/*
+*	Constructor Tetrix Window
+*	@name	: TetrixWindow
+*	@param	: no param.
+*	@return : void
+*/
 TetrixWindow::TetrixWindow()
 {
     board = new TetrixBoard;
@@ -78,6 +93,12 @@ TetrixWindow::TetrixWindow()
     setLayout(layout);
 }
 
+/*
+*	create Label for NEXT/LEVEL/SCORE/LINES REMOVED
+*	@name	: createLabel
+*	@param	: QString
+*	@return : QLabel
+*/
 QLabel *TetrixWindow::createLabel(const QString &text)
 {
     QLabel *label = new QLabel(text);
