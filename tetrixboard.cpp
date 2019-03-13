@@ -7,8 +7,7 @@
 * (for more details see LICENSE)
 *
 */
-#include <QtWidgets>
-
+#include "precompiledHeader.h"
 #include "tetrixboard.h"
 
 /*

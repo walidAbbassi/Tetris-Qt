@@ -7,9 +7,7 @@
 * (for more details see LICENSE)
 *
 */
-#include <stdlib.h>
-#include <QApplication>
-
+#include "precompiledHeader.h"
 #include "mainWindowTetris.h"
 #include "tetrixwindow.h"
 

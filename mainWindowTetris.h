@@ -1,7 +1,7 @@
 #ifndef MAINWINDOWTETRIS_H
 #define MAINWINDOWTETRIS_H
 
-#include <QMainWindow>
+#include "precompiledHeader.h"
 
 namespace Ui {
 class MainWindowTetris;

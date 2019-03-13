@@ -7,9 +7,7 @@
 * (for more details see LICENSE)
 *
 */
-#include <stdlib.h>
-#include <QtCore>
-
+#include "precompiledHeader.h"
 #include "tetrixpiece.h"
 
 /*

@@ -1,11 +1,7 @@
 #ifndef TETRIXBOARD_H
 #define TETRIXBOARD_H
 
-#include <QBasicTimer>
-#include <QFrame>
-#include <QPointer>
-#include <QtMultimedia/QMediaPlayer>
-
+#include "precompiledHeader.h"
 #include "tetrixpiece.h"
 
 class QLabel;

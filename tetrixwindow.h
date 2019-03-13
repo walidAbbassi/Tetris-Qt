@@ -1,9 +1,7 @@
 #ifndef TETRIXWINDOW_H
 #define TETRIXWINDOW_H
 
-#include <QFrame>
-#include <QWidget>
-#include <QDial>
+#include "precompiledHeader.h"
 
 class QLCDNumber;
 class QLabel;

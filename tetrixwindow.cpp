@@ -7,8 +7,6 @@
 * (for more details see LICENSE)
 *
 */
-#include <QtWidgets>
-
 #include "tetrixboard.h"
 #include "tetrixwindow.h"
 

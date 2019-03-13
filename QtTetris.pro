@@ -23,6 +23,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += c++11
+CONFIG += precompiledHeader.h
+PRECOMPILED_HEADER = precompiledHeader.h
 
 SOURCES += \
         main.cpp \
@@ -35,7 +37,8 @@ HEADERS += \
         mainWindowTetris.h \
     tetrixboard.h \
     tetrixpiece.h \
-    tetrixwindow.h
+    tetrixwindow.h \
+    precompiledHeader.h
 
 FORMS += \
         mainWindowTetris.ui

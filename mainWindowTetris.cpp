@@ -7,10 +7,7 @@
 * (for more details see LICENSE)
 *
 */
-#include <QMessageBox>
-#include <QHBoxLayout>
-#include <QIcon>
-
+#include "precompiledHeader.h"
 #include "mainWindowTetris.h"
 #include "ui_mainWindowTetris.h"
 #include "tetrixwindow.h"
